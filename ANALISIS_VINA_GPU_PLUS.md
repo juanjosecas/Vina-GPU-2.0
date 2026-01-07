@@ -60,8 +60,9 @@ Vina-GPU+ acelera el proceso de acoplamiento molecular (docking) para predecir l
 Total de archivos fuente: 86
 Líneas de código C++: ~9,334
 Líneas de headers: ~6,862
-Líneas de kernels OpenCL: ~267
-Total aproximado: ~16,463 líneas
+Líneas de kernels OpenCL (.cl): ~267
+Líneas adicionales de kernels (.cpp en kernels/): ~964
+Total aproximado: ~17,427 líneas
 ```
 
 ### 2.2 Arquitectura del Proyecto
@@ -89,11 +90,12 @@ Vina-GPU+/
 │   └── src/
 │       ├── wrapcl.cpp     # Implementación wrapper OpenCL
 │       └── kernels/
-│           ├── kernel1.cl  # Cálculo de grillas en GPU (~5,520 líneas)
-│           ├── kernel2.cl  # Docking Monte Carlo/BFGS (~3,213 líneas)
-│           ├── quasi_newton.cpp # BFGS para GPU (~23,585 líneas)
-│           ├── mutate_conf.cpp  # Mutaciones conformacionales (~5,749 líneas)
-│           └── matrix.cpp       # Operaciones matriciales (~1,435 líneas)
+│           ├── kernel1.cl  # Cálculo de grillas en GPU (~136 líneas)
+│           ├── kernel2.cl  # Docking Monte Carlo/BFGS (~131 líneas)
+│           ├── quasi_newton.cpp # BFGS para GPU (~752 líneas)
+│           ├── mutate_conf.cpp  # Mutaciones conformacionales (~165 líneas)
+│           ├── matrix.cpp       # Operaciones matriciales (~43 líneas)
+│           └── code_head.cpp    # Definiciones comunes (~4 líneas)
 └── Makefile                # Sistema de compilación (Linux)
 ```
 
